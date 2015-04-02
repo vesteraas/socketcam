@@ -7,7 +7,7 @@ var Campi = require('campi'),
 var campi = new Campi();
 
 app.get('/', function (req, res) {
-    res.sendfile('index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 
 http.listen(3000, function () {
