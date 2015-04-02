@@ -21,11 +21,16 @@ To install the **socketcam** project on your Raspberry Pi, type the following:
 $ git clone https://github.com/vesteraas/socketcam.git
 $ cd socketcam
 $ npm install
-$ node index.js
 ```
 
 ## Running
-Point your browser to:
+In the **socketcam** directory, type:
+
+```bash
+$ node index.js
 ```
-http://<IP_OF_YOUR_PI>:3000
+
+Then, point your browser to:
+```
+http://<IP_ADDRESS_OF_YOUR_PI>:3000
 ```
