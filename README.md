@@ -27,7 +27,7 @@ $ npm install
 In the **socketcam** directory, type:
 
 ```bash
-$ node index.js
+$ npm start
 ```
 
 Then, point your browser to:

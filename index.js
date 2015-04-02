@@ -26,13 +26,13 @@ http.listen(3000, function () {
             }, function (err, stream) {
                 var message = '';
 
-                var pipe = stream.pipe(base64.encode());
+                var base64Stream = stream.pipe(base64.encode());
 
-                pipe.on('data', function (buffer) {
+                base64Stream.on('data', function (buffer) {
                     message += buffer.toString();
                 });
 
-                pipe.on('end', function () {
+                base64Stream.on('end', function () {
                     io.sockets.emit('image', message);
                     busy = false;
                 });
