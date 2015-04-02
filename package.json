@@ -1,7 +1,7 @@
 {
-  "name": "timelapse",
+  "name": "socketcam",
   "version": "0.0.1",
-  "description": "",
+  "description": "Push Rasberry Pi camera image to cients using Socket.IO",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
   "dependencies": {
     "campi": "0.0.2",
     "express": "4.10.2",
-    "socket.io": "*",
+    "socket.io": "1.3.5",
     "base64-stream": "0.1.2"
   }
 }
