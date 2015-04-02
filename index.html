@@ -3,8 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Raspberry Pi Camera</title>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <style type="text/css">
         body {
             background-color: #0b97c4;
@@ -20,21 +19,24 @@
             text-align: center;
         }
     </style>
-    <script>
-        $(document).ready(function() {
-            var imageCount = 0;
-            var socket = io();
-            socket.on('image', function(message){
-                $('#image').attr('src', 'data:image/jpg;base64,' + message);
-                $('#caption').text('Image #' + ++imageCount);
-            });
-        });
+    <script type="text/javascript">
+        document.onreadystatechange = function () {
+            var state = document.readyState
+            if (state == 'complete') {
+                var imageCount = 0;
+                var socket = io();
+                socket.on('image', function(message) {
+                    document.getElementById("image").src = 'data:image/jpg;base64,' + message;
+                    document.getElementById("caption").innerHTML = 'Image #' + ++imageCount;
+                });
+            }
+        }
     </script>
 </head>
 <body>
 <div id="container">
     <img width="640" height="480" id="image">
-    <p id="caption">Image</p>
+    <p id="caption">Image #0</p>
 </div>
 </body>
 </html>
