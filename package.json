@@ -1,0 +1,17 @@
+{
+  "name": "timelapse",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Werner Vesteraas",
+  "license": "ISC",
+  "dependencies": {
+    "campi": "0.0.2",
+    "express": "4.10.2",
+    "socket.io": "*",
+    "base64-stream": "0.1.2"
+  }
+}
