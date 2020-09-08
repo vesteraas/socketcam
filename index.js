@@ -2,7 +2,7 @@ var Campi = require('campi'),
     app = require('express')(),
     http = require('http').Server(app),
     io = require('socket.io')(http),
-    base64 = require('base64-stream');
+    {Base64Encode} = require('base64-stream');
 
 var campi = new Campi();
 
@@ -26,7 +26,7 @@ http.listen(3000, function () {
             }, function (err, stream) {
                 var message = '';
 
-                var base64Stream = stream.pipe(base64.encode());
+                var base64Stream = stream.pipe(new Base64Encode());
 
                 base64Stream.on('data', function (buffer) {
                     message += buffer.toString();
