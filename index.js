@@ -26,7 +26,7 @@ http.listen(3000, function () {
             }, function (err, stream) {
                 var message = '';
 
-                var base64Stream = stream.pipe(Base64Encode());
+                var base64Stream = stream.pipe(new Base64Encode());
 
                 base64Stream.on('data', function (buffer) {
                     message += buffer.toString();
